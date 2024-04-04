@@ -13,6 +13,7 @@ const Home = () => {
         style={screenStyle.container}
         data={widgets}
         renderItem={renderItem}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

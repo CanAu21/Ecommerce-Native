@@ -2,14 +2,14 @@ import {FlatList, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import WidgetTitle from '../components/widgets/widgetTitle';
 import {getRequest} from '../service/verb';
-import {PRODUCTS_URL} from '../service/urls';
+import {CATEGORY_URL} from '../service/urls';
 import WidgetProductCart from '../components/widgets/productCart';
 
 const NewArrival = () => {
   const [product, setProduct] = useState([]);
 
-  const getAllProducts = () => {
-    getRequest(PRODUCTS_URL)
+  const getNewArrivalProducts = () => {
+    getRequest(CATEGORY_URL + "/men's clothing")
       .then(res => {
         setProduct(res.data);
       })
@@ -19,7 +19,7 @@ const NewArrival = () => {
   };
 
   useEffect(() => {
-    getAllProducts();
+    getNewArrivalProducts();
   }, []);
 
   return (
