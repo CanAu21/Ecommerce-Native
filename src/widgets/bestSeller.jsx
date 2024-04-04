@@ -1,10 +1,11 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
+import WidgetTitle from '../components/widgets/widgetTitle';
 
 const BestSeller = () => {
   return (
     <View>
-      <Text>bestSeller</Text>
+      <WidgetTitle title={'Best Seller'} />
     </View>
   );
 };
