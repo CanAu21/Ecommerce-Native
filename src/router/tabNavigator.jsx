@@ -24,7 +24,7 @@ export default function TabNavigator() {
             name={route?.name}
           />
         ),
-        headerRight: ({color}) => <HeaderTabRight />,
+        headerRight: () => <HeaderTabRight />,
         tabBarActiveTintColor: AppColors.PRIMARY,
         tabBarInactiveTintColor: AppColors.GRAY,
       })}>

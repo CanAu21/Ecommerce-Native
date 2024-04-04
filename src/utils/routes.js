@@ -1,4 +1,4 @@
-export const HOME = 'Home';
+export const HOME = 'Shopink';
 export const CART = 'Cart';
 export const CATEGORIES = 'Categories';
 export const PROFILE = 'Profile';
