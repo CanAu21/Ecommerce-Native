@@ -10,7 +10,7 @@ const BestSeller = () => {
   const [product, setProduct] = useState([]);
 
   const getBestSellerProducts = (category = "women's clothing") => {
-    getRequest(CATEGORY_URL + `/${category}`)
+    getRequest(CATEGORY_URL + `/${category}`, {limit: 3, sort: 'desc'})
       .then(res => {
         setProduct(res.data);
       })

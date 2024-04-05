@@ -9,7 +9,7 @@ const NewArrival = () => {
   const [product, setProduct] = useState([]);
 
   const getNewArrivalProducts = () => {
-    getRequest(CATEGORY_URL + "/men's clothing")
+    getRequest(CATEGORY_URL + "/men's clothing", {limit: 3})
       .then(res => {
         setProduct(res.data);
       })
