@@ -1,12 +1,24 @@
-import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  TouchableOpacity,
+  Pressable,
+} from 'react-native';
 import React from 'react';
 import {width} from '../../utils/constants';
 import AppColors from '../../theme/colors';
 import {Heart} from 'iconsax-react-native';
+import {useNavigation} from '@react-navigation/native';
+import {PRODUCTDETAIL} from '../../utils/routes';
 
 const WidgetProductCart = ({item}) => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
+    <Pressable
+      onPress={() => navigation.navigate(PRODUCTDETAIL, {item: item})}
+      style={styles.container}>
       <Image style={styles.image} source={{uri: item.image}} />
       <View style={styles.contain}>
         <Text numberOfLines={2} style={styles.title}>
@@ -24,7 +36,7 @@ const WidgetProductCart = ({item}) => {
           </View>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 

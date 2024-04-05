@@ -19,7 +19,7 @@ const ProductCart = ({item}) => {
   const navigation = useNavigation();
   return (
     <Pressable
-      onPress={() => navigation.navigate(PRODUCTDETAIL)}
+      onPress={() => navigation.navigate(PRODUCTDETAIL, {item: item})}
       style={styles.container}>
       <Image style={styles.image} source={{uri: item.image}} />
       <View style={styles.contain}>
