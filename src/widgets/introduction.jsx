@@ -2,15 +2,21 @@ import {View, Image, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import React from 'react';
 import {height, width} from '../utils/constants';
 import AppColors from '../theme/colors';
+import {useNavigation} from '@react-navigation/native';
+import {PRODUCTLIST} from '../utils/routes';
 
 const Introduction = () => {
+  // For the ProductList navigation
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Image
         style={styles.image}
         source={require('../assets/images/int1.png')}
       />
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate(PRODUCTLIST)}
+        style={styles.button}>
         <Text style={styles.buttonText}>Shop Now</Text>
       </TouchableOpacity>
     </View>
