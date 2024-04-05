@@ -6,7 +6,7 @@ const screenStyle = StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: AppColors.WHITE,
-    paddingHorizontal: 10,
+    padding: 10,
   },
 });
 

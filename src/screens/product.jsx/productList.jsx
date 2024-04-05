@@ -5,14 +5,18 @@ import {PRODUCTS_URL} from '../../service/urls';
 import ProductCart from '../../components/product/productCart';
 import screenStyle from '../../styles/screenStyle';
 import Spinner from '../../components/uı/spinner';
+import CategorySelect from '../../components/widgets/categorySelect';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const getAllProducts = () => {
+  const getAllProducts = category => {
+    const url = category
+      ? PRODUCTS_URL + `/category/${category}`
+      : PRODUCTS_URL;
     setLoading(true);
-    getRequest(PRODUCTS_URL)
+    getRequest(url)
       .then(res => {
         setProducts(res.data);
       })
@@ -30,6 +34,7 @@ const ProductList = () => {
 
   return (
     <View style={screenStyle.container}>
+      <CategorySelect onSelect={value => getAllProducts(value)} />
       {loading ? (
         <Spinner />
       ) : (

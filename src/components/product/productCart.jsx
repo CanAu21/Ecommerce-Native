@@ -12,6 +12,7 @@ import AppColors from '../../theme/colors';
 import {Heart} from 'iconsax-react-native';
 import {useNavigation} from '@react-navigation/native';
 import {PRODUCTDETAIL} from '../../utils/routes';
+import Button from '../uı/button';
 
 const ProductCart = ({item}) => {
   // UseNavigation used for Product Detail
@@ -36,6 +37,9 @@ const ProductCart = ({item}) => {
             </TouchableOpacity>
           </View>
         </View>
+      </View>
+      <View>
+        <Button title="Add to Cart" />
       </View>
     </Pressable>
   );

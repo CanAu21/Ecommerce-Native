@@ -59,7 +59,6 @@ const CategorySelect = ({onSelect}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     marginBottom: 15,
   },
   activeCategory: {
