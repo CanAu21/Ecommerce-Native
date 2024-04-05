@@ -4,12 +4,13 @@ import WidgetTitle from '../components/widgets/widgetTitle';
 import {getRequest} from '../service/verb';
 import WidgetProductCart from '../components/widgets/productCart';
 import {CATEGORY_URL} from '../service/urls';
+import CategorySelect from '../components/widgets/categorySelect';
 
 const BestSeller = () => {
   const [product, setProduct] = useState([]);
 
-  const getBestSellerProducts = () => {
-    getRequest(CATEGORY_URL + "/women's clothing")
+  const getBestSellerProducts = (category = "women's clothing") => {
+    getRequest(CATEGORY_URL + `/${category}`)
       .then(res => {
         setProduct(res.data);
       })
@@ -25,6 +26,7 @@ const BestSeller = () => {
   return (
     <View>
       <WidgetTitle title={'Best Seller'} />
+      <CategorySelect onSelect={value => getBestSellerProducts(value)} />
       <FlatList
         data={product}
         renderItem={({item}) => (

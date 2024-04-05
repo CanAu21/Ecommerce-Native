@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     width: width * 0.4,
     height: height * 0.04,
     position: 'absolute',
-    bottom: 40,
+    bottom: 46,
     right: 15,
     justifyContent: 'center',
     alignItems: 'center',
@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     fontWeight: '500',
-    color: AppColors.BLACK,
+    color: AppColors.WHITE,
   },
 });
